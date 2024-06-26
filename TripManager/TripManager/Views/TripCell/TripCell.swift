@@ -21,9 +21,6 @@ struct TripCell: View {
                 .font(.system(size: 15))
         }
         .padding(10)
-        .onTapGesture {
-            // TODO
-        }
     }
 }
 

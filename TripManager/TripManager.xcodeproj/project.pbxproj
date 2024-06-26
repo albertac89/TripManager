@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		508C7A8B2C2C268F00FFB8A7 /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 508C7A8A2C2C268F00FFB8A7 /* Polyline */; };
+		508C7A922C2CAE9B00FFB8A7 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C7A912C2CAE9B00FFB8A7 /* Stop.swift */; };
 		509600282C2838FD00AD9021 /* TripManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600272C2838FD00AD9021 /* TripManagerApp.swift */; };
 		5096002C2C2838FF00AD9021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5096002B2C2838FF00AD9021 /* Assets.xcassets */; };
 		5096002F2C2838FF00AD9021 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5096002E2C2838FF00AD9021 /* Preview Assets.xcassets */; };
@@ -43,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		508C7A912C2CAE9B00FFB8A7 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		509600242C2838FD00AD9021 /* TripManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509600272C2838FD00AD9021 /* TripManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerApp.swift; sourceTree = "<group>"; };
 		5096002B2C2838FF00AD9021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508C7A8B2C2C268F00FFB8A7 /* Polyline in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				509600692C288F2E00AD9021 /* Trip.swift */,
+				508C7A912C2CAE9B00FFB8A7 /* Stop.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,6 +231,9 @@
 			dependencies = (
 			);
 			name = TripManager;
+			packageProductDependencies = (
+				508C7A8A2C2C268F00FFB8A7 /* Polyline */,
+			);
 			productName = TripManager;
 			productReference = 509600242C2838FD00AD9021 /* TripManager.app */;
 			productType = "com.apple.product-type.application";
@@ -298,6 +306,9 @@
 				Base,
 			);
 			mainGroup = 5096001B2C2838FC00AD9021;
+			packageReferences = (
+				508C7A892C2C268F00FFB8A7 /* XCRemoteSwiftPackageReference "Polyline" */,
+			);
 			productRefGroup = 509600252C2838FD00AD9021 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -351,6 +362,7 @@
 				509600592C28485300AD9021 /* MapListH.swift in Sources */,
 				509600282C2838FD00AD9021 /* TripManagerApp.swift in Sources */,
 				5096005F2C284E7300AD9021 /* MapListViewModel.swift in Sources */,
+				508C7A922C2CAE9B00FFB8A7 /* Stop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +686,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		508C7A892C2C268F00FFB8A7 /* XCRemoteSwiftPackageReference "Polyline" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raphaelmor/Polyline.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		508C7A8A2C2C268F00FFB8A7 /* Polyline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 508C7A892C2C268F00FFB8A7 /* XCRemoteSwiftPackageReference "Polyline" */;
+			productName = Polyline;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5096001C2C2838FC00AD9021 /* Project object */;
 }
