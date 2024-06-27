@@ -15,6 +15,13 @@ struct Stop: Codable {
     let stopTime: String
     let point: Point
     let userName: String
+    var priceFormated: String? {
+        price.currencyFormat
+    }
+    var stopTimeFormated: String? {
+        stopTime.dateFormat?.formatted()
+    }
+
 
     struct Point: Codable {
         let latitude: Double

@@ -11,7 +11,7 @@ import SwiftUI
 struct TripManagerApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(notificationsCenter: NotificationsCenter(center: UNUserNotificationCenter.current()))
         }
     }
 }

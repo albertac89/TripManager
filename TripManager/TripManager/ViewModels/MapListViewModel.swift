@@ -9,6 +9,7 @@ import SwiftUI
 import Foundation
 import MapKit
 
+// TODO add function comments
 @MainActor
 final class MapListViewModel: ObservableObject {
     private let tripsDataManager: TripsDataManagerProtocol

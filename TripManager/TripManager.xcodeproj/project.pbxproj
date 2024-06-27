@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		505130D92C2D825F00741634 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505130D82C2D825F00741634 /* String+Date.swift */; };
+		505130DB2C2D8C7700741634 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505130DA2C2D8C7700741634 /* Double+Currency.swift */; };
 		508C7A8B2C2C268F00FFB8A7 /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 508C7A8A2C2C268F00FFB8A7 /* Polyline */; };
 		508C7A922C2CAE9B00FFB8A7 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C7A912C2CAE9B00FFB8A7 /* Stop.swift */; };
+		508DD9622C2DAAC2005911CF /* StopInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DD9612C2DAAC2005911CF /* StopInfoView.swift */; };
+		508DD9642C2DABB8005911CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DD9632C2DABB8005911CF /* Constants.swift */; };
+		508DD9692C2DC651005911CF /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DD9682C2DC651005911CF /* ContactView.swift */; };
+		508DD96B2C2DE923005911CF /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DD96A2C2DE923005911CF /* ContactViewModel.swift */; };
+		508DD96D2C2DF34D005911CF /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DD96C2C2DF34D005911CF /* Contact.swift */; };
+		508DD96F2C2DF62B005911CF /* NotificationsCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DD96E2C2DF62B005911CF /* NotificationsCenter.swift */; };
 		509600282C2838FD00AD9021 /* TripManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600272C2838FD00AD9021 /* TripManagerApp.swift */; };
 		5096002C2C2838FF00AD9021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5096002B2C2838FF00AD9021 /* Assets.xcassets */; };
 		5096002F2C2838FF00AD9021 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5096002E2C2838FF00AD9021 /* Preview Assets.xcassets */; };
@@ -16,13 +24,13 @@
 		509600432C2838FF00AD9021 /* TripManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600422C2838FF00AD9021 /* TripManagerUITests.swift */; };
 		509600452C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600442C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift */; };
 		509600532C28395500AD9021 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600522C28395500AD9021 /* MainView.swift */; };
-		509600592C28485300AD9021 /* MapListH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600582C28485300AD9021 /* MapListH.swift */; };
-		5096005B2C28485C00AD9021 /* MapListV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096005A2C28485C00AD9021 /* MapListV.swift */; };
+		509600592C28485300AD9021 /* MapListHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600582C28485300AD9021 /* MapListHView.swift */; };
+		5096005B2C28485C00AD9021 /* MapListVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096005A2C28485C00AD9021 /* MapListVView.swift */; };
 		5096005F2C284E7300AD9021 /* MapListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096005E2C284E7300AD9021 /* MapListViewModel.swift */; };
 		509600612C284F1F00AD9021 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600602C284F1F00AD9021 /* Locations.swift */; };
 		509600672C288EB500AD9021 /* TripsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600662C288EB500AD9021 /* TripsDataManager.swift */; };
 		5096006A2C288F2E00AD9021 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600692C288F2E00AD9021 /* Trip.swift */; };
-		5096006C2C2897F100AD9021 /* MapList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096006B2C2897F100AD9021 /* MapList.swift */; };
+		5096006C2C2897F100AD9021 /* MapListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096006B2C2897F100AD9021 /* MapListView.swift */; };
 		5096006F2C289D9A00AD9021 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096006E2C289D9A00AD9021 /* TripCell.swift */; };
 		509600712C29C78600AD9021 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600702C29C78600AD9021 /* Api.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +53,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		505130D82C2D825F00741634 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		505130DA2C2D8C7700741634 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		508C7A912C2CAE9B00FFB8A7 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		508DD9612C2DAAC2005911CF /* StopInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfoView.swift; sourceTree = "<group>"; };
+		508DD9632C2DABB8005911CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		508DD9682C2DC651005911CF /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		508DD96A2C2DE923005911CF /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		508DD96C2C2DF34D005911CF /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		508DD96E2C2DF62B005911CF /* NotificationsCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCenter.swift; sourceTree = "<group>"; };
 		509600242C2838FD00AD9021 /* TripManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509600272C2838FD00AD9021 /* TripManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerApp.swift; sourceTree = "<group>"; };
 		5096002B2C2838FF00AD9021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,13 +72,13 @@
 		509600422C2838FF00AD9021 /* TripManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITests.swift; sourceTree = "<group>"; };
 		509600442C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		509600522C28395500AD9021 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		509600582C28485300AD9021 /* MapListH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListH.swift; sourceTree = "<group>"; };
-		5096005A2C28485C00AD9021 /* MapListV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListV.swift; sourceTree = "<group>"; };
+		509600582C28485300AD9021 /* MapListHView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListHView.swift; sourceTree = "<group>"; };
+		5096005A2C28485C00AD9021 /* MapListVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListVView.swift; sourceTree = "<group>"; };
 		5096005E2C284E7300AD9021 /* MapListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewModel.swift; sourceTree = "<group>"; };
 		509600602C284F1F00AD9021 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		509600662C288EB500AD9021 /* TripsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDataManager.swift; sourceTree = "<group>"; };
 		509600692C288F2E00AD9021 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		5096006B2C2897F100AD9021 /* MapList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapList.swift; sourceTree = "<group>"; };
+		5096006B2C2897F100AD9021 /* MapListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListView.swift; sourceTree = "<group>"; };
 		5096006E2C289D9A00AD9021 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
 		509600702C29C78600AD9021 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		508DD9672C2DC643005911CF /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				508DD9682C2DC651005911CF /* ContactView.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
 		5096001B2C2838FC00AD9021 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +180,7 @@
 		509600512C28392400AD9021 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				508DD9672C2DC643005911CF /* Contact */,
 				5096006D2C289D8300AD9021 /* TripCell */,
 				509600552C28483600AD9021 /* MapList */,
 				509600522C28395500AD9021 /* MainView.swift */,
@@ -167,6 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				509600602C284F1F00AD9021 /* Locations.swift */,
+				505130D82C2D825F00741634 /* String+Date.swift */,
+				505130DA2C2D8C7700741634 /* Double+Currency.swift */,
+				508DD9632C2DABB8005911CF /* Constants.swift */,
+				508DD96E2C2DF62B005911CF /* NotificationsCenter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -174,9 +203,10 @@
 		509600552C28483600AD9021 /* MapList */ = {
 			isa = PBXGroup;
 			children = (
-				5096005A2C28485C00AD9021 /* MapListV.swift */,
-				509600582C28485300AD9021 /* MapListH.swift */,
-				5096006B2C2897F100AD9021 /* MapList.swift */,
+				5096005A2C28485C00AD9021 /* MapListVView.swift */,
+				509600582C28485300AD9021 /* MapListHView.swift */,
+				5096006B2C2897F100AD9021 /* MapListView.swift */,
+				508DD9612C2DAAC2005911CF /* StopInfoView.swift */,
 			);
 			path = MapList;
 			sourceTree = "<group>";
@@ -185,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				5096005E2C284E7300AD9021 /* MapListViewModel.swift */,
+				508DD96A2C2DE923005911CF /* ContactViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -203,6 +234,7 @@
 			children = (
 				509600692C288F2E00AD9021 /* Trip.swift */,
 				508C7A912C2CAE9B00FFB8A7 /* Stop.swift */,
+				508DD96C2C2DF34D005911CF /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,13 +385,21 @@
 			files = (
 				5096006A2C288F2E00AD9021 /* Trip.swift in Sources */,
 				509600612C284F1F00AD9021 /* Locations.swift in Sources */,
+				505130DB2C2D8C7700741634 /* Double+Currency.swift in Sources */,
+				505130D92C2D825F00741634 /* String+Date.swift in Sources */,
 				509600532C28395500AD9021 /* MainView.swift in Sources */,
+				508DD9622C2DAAC2005911CF /* StopInfoView.swift in Sources */,
 				509600672C288EB500AD9021 /* TripsDataManager.swift in Sources */,
+				508DD9642C2DABB8005911CF /* Constants.swift in Sources */,
+				508DD96B2C2DE923005911CF /* ContactViewModel.swift in Sources */,
 				5096006F2C289D9A00AD9021 /* TripCell.swift in Sources */,
+				508DD96F2C2DF62B005911CF /* NotificationsCenter.swift in Sources */,
 				509600712C29C78600AD9021 /* Api.swift in Sources */,
-				5096005B2C28485C00AD9021 /* MapListV.swift in Sources */,
-				5096006C2C2897F100AD9021 /* MapList.swift in Sources */,
-				509600592C28485300AD9021 /* MapListH.swift in Sources */,
+				508DD96D2C2DF34D005911CF /* Contact.swift in Sources */,
+				5096005B2C28485C00AD9021 /* MapListVView.swift in Sources */,
+				5096006C2C2897F100AD9021 /* MapListView.swift in Sources */,
+				508DD9692C2DC651005911CF /* ContactView.swift in Sources */,
+				509600592C28485300AD9021 /* MapListHView.swift in Sources */,
 				509600282C2838FD00AD9021 /* TripManagerApp.swift in Sources */,
 				5096005F2C284E7300AD9021 /* MapListViewModel.swift in Sources */,
 				508C7A922C2CAE9B00FFB8A7 /* Stop.swift in Sources */,

@@ -8,28 +8,50 @@
 import SwiftUI
 
 struct MainView: View {
+    let notificationsCenter: NotificationsCenterProtocol
     @State var orientation = UIDevice.current.orientation
+    @State private var path = [Destination]()
     private let orientationObserver = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
         .makeConnectable()
         .autoconnect()
 
+    enum Destination {
+        case contactForm
+    }
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             Group {
                 if orientation.isLandscape {
-                    MapListH()
+                    MapListHView()
                 } else {
-                    MapListV()
+                    MapListVView()
                 }
             }
             .navigationTitle("TripManager")
             .navigationBarTitleDisplayMode(.inline)
-        }.onReceive(orientationObserver) { _ in
-            self.orientation = UIDevice.current.orientation
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Contact") {
+                        path.append(.contactForm)
+                    }
+                }
+            }.navigationDestination(for: Destination.self) { selection in
+                switch selection {
+                case .contactForm:
+                    ContactView(viewModel: ContactViewModel(notificationsCenter: NotificationsCenter(center: UNUserNotificationCenter.current())))
+                        .navigationTitle("Contact form")
+                }
+            }
         }
+        .tint(.whiteOnDark)
+        .onReceive(orientationObserver) { _ in
+            self.orientation = UIDevice.current.orientation // TODO fix scope reset when rotate
+        }
+        .task(notificationsCenter.notificationPermisions)
     }
 }
 
 #Preview {
-    MainView()
+    MainView(notificationsCenter: NotificationsCenter(center: UNUserNotificationCenter.current()))
 }

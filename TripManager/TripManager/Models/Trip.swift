@@ -17,6 +17,9 @@ struct Trip: Codable, Identifiable, Hashable {
     let description: String
     let destination: LocationPoint
     let stops: [Stop]
+    var startTimeFormated: String? {
+        startTime.dateFormat?.formatted()
+    }
     var route: [CLLocationCoordinate2D] {
         var route = stops.compactMap { $0.point?.coordinate }
         route.insert(origin.point.coordinate, at: 0)

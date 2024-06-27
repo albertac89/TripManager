@@ -1,5 +1,5 @@
 //
-//  MapList.swift
+//  MapListView.swift
 //  TripManager
 //
 //  Created by Albert Aige Cortasa on 25/6/24.
@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 import Polyline
 
-struct MapList: View {
+struct MapListView: View {
     @ObservedObject var viewModel: MapListViewModel
     @State private var selectedTrip: Trip?
     @State private var position = MapCameraPosition.region(
@@ -20,25 +20,42 @@ struct MapList: View {
     )
     @State private var selectedAnnotation: Trip.Stop?
 
+    struct Constants {
+        struct Strings {
+            static let origin = "Origin"
+            static let destination = "Destination"
+            static let stop = "Stop"
+            static let address = "Address"
+            static let okError = "Ok"
+        }
+    }
+
     var body: some View {
         Map(position: $position, interactionModes: .all) {
             if let selectedTrip {
-                Marker("Origen", systemImage: "car.side.fill", coordinate: selectedTrip.origin.point.coordinate).tint(.black)
-                Marker("Destino", systemImage: "flag.checkered", coordinate: selectedTrip.destination.point.coordinate).tint(.black)
+                Marker(Constants.Strings.origin, 
+                       systemImage: Icons.origin,
+                       coordinate: selectedTrip.origin.point.coordinate)
+                .tint(.whiteOnDark)
+                Marker(Constants.Strings.destination,
+                       systemImage: Icons.destination,
+                       coordinate: selectedTrip.destination.point.coordinate)
+                .tint(.whiteOnDark)
 
                 if let polyline = Polyline(coordinates: selectedTrip.route).mkPolyline {
-                    MapPolyline(polyline).stroke(.blue, lineWidth: 5)
+                    MapPolyline(polyline)
+                        .stroke(.blue, lineWidth: 5)
                 }
 
-                // TODO fix anotations in dark mode
                 ForEach(selectedTrip.stops) { stop in
                     if let point = stop.point {
-                        Annotation("Parada", coordinate: point.coordinate) {
+                        Annotation(Constants.Strings.stop, coordinate: point.coordinate) {
                             ZStack {
-                                Image(systemName: "mappin.circle.fill")
+                                Image(systemName: Icons.stop)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 25)
+                                    .tint(.whiteOnDark)
                                     .onTapGesture {
                                         if viewModel.stop != nil {
                                             selectedAnnotation = stop
@@ -46,27 +63,28 @@ struct MapList: View {
                                     }
                             }
                             .task(viewModel.loadStops)
-                            .background(.white)
+                            .background(.darkOnDark)
                             .clipShape(Circle())
                             .opacity(stop.id == selectedAnnotation?.id ? 0 : 1)
                         }
                         Annotation("", coordinate: point.coordinate) {
                             if stop.id == selectedAnnotation?.id, let stop = viewModel.stop {
-                                VStack(alignment: .leading) {
+                                VStack {
                                     HStack {
-                                        Image(systemName: "xmark.circle").onTapGesture {
-                                            selectedAnnotation = nil
-                                        }.tint(.black)
+                                        Image(systemName: Icons.closeIcon)
+                                            .onTapGesture {
+                                                selectedAnnotation = nil
+                                            }
+                                            .tint(.darkOnDark)
                                         Spacer()
-                                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
-                                    Text("Address: \(stop.address)").font(.system(size: 12))
-                                    Text("Fecha: \(stop.stopTime)").font(.system(size: 12))
-                                    Text("Precio: \(stop.price)").font(.system(size: 12))
-                                    Text("Pagado: \(stop.paid ? "si" : "no")").font(.system(size: 12))
+                                    }
+                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
+                                    StopInfoView(stop: stop)
                                 }
                                 .padding(10)
-                                .background(.white)
+                                .background(.darkOnDark)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .shadow(radius: 5)
                             }
                         }
                     }
@@ -91,11 +109,11 @@ struct MapList: View {
         .task(viewModel.loadTrips)
         .refreshable(action: viewModel.loadTrips)
         .alert(viewModel.errorDescription ?? "", isPresented: $viewModel.showError) {
-            Button("OK", role: .cancel) { }
+            Button(Constants.Strings.okError, role: .cancel) { }
         }
     }
 }
 
 #Preview {
-    MapList(viewModel: MapListViewModel(tripsDataManager: TripsDataManager(api: Api(client: URLSession.shared))))
+    MapListView(viewModel: MapListViewModel(tripsDataManager: TripsDataManager(api: Api(client: URLSession.shared))))
 }
