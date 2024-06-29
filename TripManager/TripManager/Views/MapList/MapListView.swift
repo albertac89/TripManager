@@ -115,5 +115,5 @@ struct MapListView: View {
 }
 
 #Preview {
-    MapListView(viewModel: MapListViewModel(tripsDataManager: TripsDataManager(api: Api(client: URLSession.shared))))
+    MapListViewBuilder.build()
 }

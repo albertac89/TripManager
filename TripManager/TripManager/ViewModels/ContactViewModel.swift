@@ -14,8 +14,9 @@ final class ContactViewModel: ObservableObject {
             limitDescriptionCharacters()
         }
     }
+    @Published var showFormSent = false
 
-    let descriptionCharactersLimit = 200
+    static let descriptionCharactersLimit = 200
     private let notificationsCenter: NotificationsCenterProtocol
 
     init(notificationsCenter: NotificationsCenterProtocol) {
@@ -25,12 +26,12 @@ final class ContactViewModel: ObservableObject {
 
 extension ContactViewModel {
     private func limitDescriptionCharacters() {
-        if form.description.count > descriptionCharactersLimit {
-            form.description = String(form.description.prefix(descriptionCharactersLimit))
+        if form.description.count > ContactViewModel.descriptionCharactersLimit {
+            form.description = String(form.description.prefix(ContactViewModel.descriptionCharactersLimit))
         }
     }
 
-    func submit() async { // TODO go back to main view after sending the form
+    func submit() async {
         if form.isValid {
             if let data = UserDefaults.standard.object(forKey: UserDefaultsKeys.form) as? Data,
                 var forms = try? JSONDecoder().decode([Contact].self, from: data) {
@@ -46,10 +47,15 @@ extension ContactViewModel {
                 await notificationsCenter.setBadgeCount(to: 1)
             }
             resetForm()
+            completed()
         }
     }
 
     private func resetForm() {
         form = Contact(name: "", surname: "", email: "", phone: "", date: Date.now, description: "")
+    }
+
+    private func completed() {
+        showFormSent = true
     }
 }

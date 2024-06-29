@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     let notificationsCenter: NotificationsCenterProtocol
-    @State var orientation = UIDevice.current.orientation
+    @State private var orientation = UIDevice.current.orientation
     @State private var path = [Destination]()
     private let orientationObserver = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
         .makeConnectable()
@@ -39,19 +39,19 @@ struct MainView: View {
             }.navigationDestination(for: Destination.self) { selection in
                 switch selection {
                 case .contactForm:
-                    ContactView(viewModel: ContactViewModel(notificationsCenter: NotificationsCenter(center: UNUserNotificationCenter.current())))
+                    ContactViewBuilder.build()
                         .navigationTitle("Contact form")
                 }
             }
         }
         .tint(.whiteOnDark)
         .onReceive(orientationObserver) { _ in
-            self.orientation = UIDevice.current.orientation // TODO fix scope reset when rotate
+            self.orientation = UIDevice.current.orientation
         }
         .task(notificationsCenter.notificationPermisions)
     }
 }
 
 #Preview {
-    MainView(notificationsCenter: NotificationsCenter(center: UNUserNotificationCenter.current()))
+    MainViewBuilder.build()
 }

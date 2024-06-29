@@ -9,54 +9,50 @@ import SwiftUI
 
 struct ContactView: View {
     @ObservedObject var viewModel: ContactViewModel
-    @State var typedCharacters: Int = 0
+    @State private var typedCharacters: Int = 0
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
             Form {
-                Text("Name*")
-                TextField("", text: $viewModel.form.name)
-                    .textFieldStyle(.roundedBorder)
-                Text("Surname*")
-                TextField("", text: $viewModel.form.surname)
-                    .textFieldStyle(.roundedBorder)
-                Text("Email*")
-                TextField("", text: $viewModel.form.email)
-                    .textFieldStyle(.roundedBorder)
-                    .keyboardType(.emailAddress)
-                Text("Phone")
-                TextField("", text: $viewModel.form.phone)
-                    .textFieldStyle(.roundedBorder)
-                    .keyboardType(.numberPad)
+                CustomTextField(title: "Name*",
+                                text: $viewModel.form.name)
+                CustomTextField(title: "Surname*",
+                                text: $viewModel.form.surname)
+                CustomTextField(title: "Email*",
+                                text: $viewModel.form.email,
+                                type: .emailAddress)
+                CustomTextField(title: "Phone",
+                                text: $viewModel.form.phone,
+                                type: .numberPad)
                 DatePicker("Time*", selection: $viewModel.form.date)
                     .onChange(of: viewModel.form.date) {
                         viewModel.form.isValidDate = true
+                    }.listRowSeparator(.hidden)
+                CustomTextEditor(title: "Description*",
+                                 text: $viewModel.form.description)
+                .listRowSeparator(.hidden)
+                Button {
+                    Task {
+                        await viewModel.submit()
                     }
-                Text("Description*") // TODO fix textfield
-                TextEditor(text: $viewModel.form.description)
-                    .border(.black)
-                    .lineLimit(6)
-                    .multilineTextAlignment(.leading)
-                    .frame(height: 100)
-                    .onChange(of: viewModel.form.description) {
-                        typedCharacters = viewModel.form.description.count
-                    }
-
-                Text("\(typedCharacters) / \(viewModel.descriptionCharactersLimit)")
-                                .foregroundColor(Color.gray)
-                                .padding(.leading, 240)
-                Section {
-                    Button("Submit") {
-                        Task {
-                            await viewModel.submit()
-                        }
-                    }
-                }.disabled(!viewModel.form.isValid)
+                } label: {
+                    Text("Submit")
+                        .frame(maxWidth: .infinity)
+                }
+                .frame(maxWidth: .infinity)
+                .buttonStyle(.bordered)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
+                .disabled(!viewModel.form.isValid)
+            }
+        }.alert("Form sent succesfully", isPresented: $viewModel.showFormSent) {
+            Button("Return to the map", role: .cancel) {
+                dismiss()
             }
         }
     }
 }
 
 #Preview {
-    ContactView(viewModel: ContactViewModel(notificationsCenter: NotificationsCenter(center: UNUserNotificationCenter.current())))
+    ContactViewBuilder.build()
 }

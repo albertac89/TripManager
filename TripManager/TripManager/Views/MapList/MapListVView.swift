@@ -10,7 +10,7 @@ import SwiftUI
 struct MapListVView: View {
     var body: some View {
         VStack {
-            MapListView(viewModel: MapListViewModel(tripsDataManager: TripsDataManager(api: Api(client: URLSession.shared))))
+            MapListViewBuilder.build()
         }
     }
 }
