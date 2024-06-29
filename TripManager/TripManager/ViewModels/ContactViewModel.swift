@@ -18,9 +18,11 @@ final class ContactViewModel: ObservableObject {
 
     static let descriptionCharactersLimit = 200
     private let notificationsCenter: NotificationsCenterProtocol
+    private let userDefaultsManager: UserDefaultsManagerProtocol
 
-    init(notificationsCenter: NotificationsCenterProtocol) {
+    init(notificationsCenter: NotificationsCenterProtocol, userDefaultsManager: UserDefaultsManagerProtocol) {
         self.notificationsCenter = notificationsCenter
+        self.userDefaultsManager = userDefaultsManager
     }
 }
 
@@ -33,26 +35,16 @@ extension ContactViewModel {
 
     func submit() async {
         if form.isValid {
-            if let data = UserDefaults.standard.object(forKey: UserDefaultsKeys.form) as? Data,
-                var forms = try? JSONDecoder().decode([Contact].self, from: data) {
+            if var forms = userDefaultsManager.get([Contact].self, valueFor: UserDefaultsKeys.form) {
                 forms.append(form)
-                if let encoded = try? JSONEncoder().encode(forms) {
-                    UserDefaults.standard.set(encoded, forKey: UserDefaultsKeys.form)
-                }
+                userDefaultsManager.set(value: forms, for: UserDefaultsKeys.form)
                 await notificationsCenter.setBadgeCount(to: forms.count)
             } else {
-                if let encoded = try? JSONEncoder().encode([form]) {
-                    UserDefaults.standard.set(encoded, forKey: UserDefaultsKeys.form)
-                }
+                userDefaultsManager.set(value: [form], for: UserDefaultsKeys.form)
                 await notificationsCenter.setBadgeCount(to: 1)
             }
-            resetForm()
             completed()
         }
-    }
-
-    private func resetForm() {
-        form = Contact(name: "", surname: "", email: "", phone: "", date: Date.now, description: "")
     }
 
     private func completed() {

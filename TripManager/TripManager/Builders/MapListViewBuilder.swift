@@ -12,7 +12,8 @@ struct MapListViewBuilder {
     static func build() -> MapListView {
         let api = Api(client: URLSession.shared)
         let tripsDataManager = TripsDataManager(api: api)
-        let viewModel = MapListViewModel(tripsDataManager: tripsDataManager)
+        let stopsDataManager = StopsDataManager(api: api)
+        let viewModel = MapListViewModel(tripsDataManager: tripsDataManager, stopsDataManager: stopsDataManager)
         return MapListView(viewModel: viewModel)
     }
 }

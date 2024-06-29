@@ -10,6 +10,23 @@
 		50207CE62C2EEEA10027F2B6 /* MainViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207CE52C2EEEA10027F2B6 /* MainViewBuilder.swift */; };
 		50207CE82C2EF1060027F2B6 /* MapListViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207CE72C2EF1060027F2B6 /* MapListViewBuilder.swift */; };
 		50207CEA2C2EF2650027F2B6 /* ContactViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207CE92C2EF2650027F2B6 /* ContactViewBuilder.swift */; };
+		50207CF82C3009E30027F2B6 /* trips.json in Resources */ = {isa = PBXBuildFile; fileRef = 50207CF02C3009E30027F2B6 /* trips.json */; };
+		50207CFB2C3009E30027F2B6 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207CF32C3009E30027F2B6 /* URLProtocolMock.swift */; };
+		50207CFD2C3009E30027F2B6 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207CF52C3009E30027F2B6 /* URLSessionMock.swift */; };
+		50207D002C300A610027F2B6 /* stops.json in Resources */ = {isa = PBXBuildFile; fileRef = 50207CFF2C300A610027F2B6 /* stops.json */; };
+		50207D022C300B720027F2B6 /* MapListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D012C300B720027F2B6 /* MapListViewModelTests.swift */; };
+		50207D042C300BCF0027F2B6 /* TripsDataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D032C300BCF0027F2B6 /* TripsDataManagerMock.swift */; };
+		50207D062C300BE40027F2B6 /* StopsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D052C300BE40027F2B6 /* StopsDataManager.swift */; };
+		50207D082C300CC20027F2B6 /* TripsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D072C300CC20027F2B6 /* TripsMock.swift */; };
+		50207D0A2C30100C0027F2B6 /* StopsDataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D092C30100C0027F2B6 /* StopsDataManagerMock.swift */; };
+		50207D0C2C30104C0027F2B6 /* StopsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D0B2C30104C0027F2B6 /* StopsMock.swift */; };
+		50207D0E2C303D8B0027F2B6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D0D2C303D8B0027F2B6 /* Extensions.swift */; };
+		50207D102C306E010027F2B6 /* ContactViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D0F2C306E010027F2B6 /* ContactViewModelTests.swift */; };
+		50207D122C306E4E0027F2B6 /* NotificationsCenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D112C306E4E0027F2B6 /* NotificationsCenterMock.swift */; };
+		50207D142C30756B0027F2B6 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D132C30756B0027F2B6 /* UserDefaultsManager.swift */; };
+		50207D162C307C7C0027F2B6 /* UserDefaultsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D152C307C7C0027F2B6 /* UserDefaultsManagerMock.swift */; };
+		50207D182C307E9A0027F2B6 /* ContactMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D172C307E9A0027F2B6 /* ContactMock.swift */; };
+		50207D1A2C308D410027F2B6 /* UserDefaultsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D192C308D410027F2B6 /* UserDefaultsManagerTests.swift */; };
 		505130D92C2D825F00741634 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505130D82C2D825F00741634 /* String.swift */; };
 		505130DB2C2D8C7700741634 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505130DA2C2D8C7700741634 /* Double+Currency.swift */; };
 		508C7A8B2C2C268F00FFB8A7 /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 508C7A8A2C2C268F00FFB8A7 /* Polyline */; };
@@ -25,7 +42,6 @@
 		509600282C2838FD00AD9021 /* TripManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600272C2838FD00AD9021 /* TripManagerApp.swift */; };
 		5096002C2C2838FF00AD9021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5096002B2C2838FF00AD9021 /* Assets.xcassets */; };
 		5096002F2C2838FF00AD9021 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5096002E2C2838FF00AD9021 /* Preview Assets.xcassets */; };
-		509600392C2838FF00AD9021 /* TripManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600382C2838FF00AD9021 /* TripManagerTests.swift */; };
 		509600432C2838FF00AD9021 /* TripManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600422C2838FF00AD9021 /* TripManagerUITests.swift */; };
 		509600452C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600442C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift */; };
 		509600532C28395500AD9021 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600522C28395500AD9021 /* MainView.swift */; };
@@ -61,6 +77,23 @@
 		50207CE52C2EEEA10027F2B6 /* MainViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewBuilder.swift; sourceTree = "<group>"; };
 		50207CE72C2EF1060027F2B6 /* MapListViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewBuilder.swift; sourceTree = "<group>"; };
 		50207CE92C2EF2650027F2B6 /* ContactViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewBuilder.swift; sourceTree = "<group>"; };
+		50207CF02C3009E30027F2B6 /* trips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trips.json; sourceTree = "<group>"; };
+		50207CF32C3009E30027F2B6 /* URLProtocolMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		50207CF52C3009E30027F2B6 /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		50207CFF2C300A610027F2B6 /* stops.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stops.json; sourceTree = "<group>"; };
+		50207D012C300B720027F2B6 /* MapListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewModelTests.swift; sourceTree = "<group>"; };
+		50207D032C300BCF0027F2B6 /* TripsDataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDataManagerMock.swift; sourceTree = "<group>"; };
+		50207D052C300BE40027F2B6 /* StopsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsDataManager.swift; sourceTree = "<group>"; };
+		50207D072C300CC20027F2B6 /* TripsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsMock.swift; sourceTree = "<group>"; };
+		50207D092C30100C0027F2B6 /* StopsDataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsDataManagerMock.swift; sourceTree = "<group>"; };
+		50207D0B2C30104C0027F2B6 /* StopsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsMock.swift; sourceTree = "<group>"; };
+		50207D0D2C303D8B0027F2B6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		50207D0F2C306E010027F2B6 /* ContactViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModelTests.swift; sourceTree = "<group>"; };
+		50207D112C306E4E0027F2B6 /* NotificationsCenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCenterMock.swift; sourceTree = "<group>"; };
+		50207D132C30756B0027F2B6 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		50207D152C307C7C0027F2B6 /* UserDefaultsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagerMock.swift; sourceTree = "<group>"; };
+		50207D172C307E9A0027F2B6 /* ContactMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMock.swift; sourceTree = "<group>"; };
+		50207D192C308D410027F2B6 /* UserDefaultsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagerTests.swift; sourceTree = "<group>"; };
 		505130D82C2D825F00741634 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		505130DA2C2D8C7700741634 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		508C7A912C2CAE9B00FFB8A7 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
@@ -77,7 +110,6 @@
 		5096002B2C2838FF00AD9021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5096002E2C2838FF00AD9021 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		509600342C2838FF00AD9021 /* TripManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		509600382C2838FF00AD9021 /* TripManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerTests.swift; sourceTree = "<group>"; };
 		5096003E2C2838FF00AD9021 /* TripManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		509600422C2838FF00AD9021 /* TripManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITests.swift; sourceTree = "<group>"; };
 		509600442C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -127,6 +159,32 @@
 				50207CE92C2EF2650027F2B6 /* ContactViewBuilder.swift */,
 			);
 			path = Builders;
+			sourceTree = "<group>";
+		};
+		50207CED2C3009E30027F2B6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				50207CEF2C3009E30027F2B6 /* JSONs */,
+				50207CF32C3009E30027F2B6 /* URLProtocolMock.swift */,
+				50207CF52C3009E30027F2B6 /* URLSessionMock.swift */,
+				50207D032C300BCF0027F2B6 /* TripsDataManagerMock.swift */,
+				50207D072C300CC20027F2B6 /* TripsMock.swift */,
+				50207D092C30100C0027F2B6 /* StopsDataManagerMock.swift */,
+				50207D0B2C30104C0027F2B6 /* StopsMock.swift */,
+				50207D112C306E4E0027F2B6 /* NotificationsCenterMock.swift */,
+				50207D172C307E9A0027F2B6 /* ContactMock.swift */,
+				50207D152C307C7C0027F2B6 /* UserDefaultsManagerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		50207CEF2C3009E30027F2B6 /* JSONs */ = {
+			isa = PBXGroup;
+			children = (
+				50207CF02C3009E30027F2B6 /* trips.json */,
+				50207CFF2C300A610027F2B6 /* stops.json */,
+			);
+			path = JSONs;
 			sourceTree = "<group>";
 		};
 		508DD9672C2DC643005911CF /* Contact */ = {
@@ -186,7 +244,10 @@
 		509600372C2838FF00AD9021 /* TripManagerTests */ = {
 			isa = PBXGroup;
 			children = (
-				509600382C2838FF00AD9021 /* TripManagerTests.swift */,
+				50207CED2C3009E30027F2B6 /* Mocks */,
+				50207D012C300B720027F2B6 /* MapListViewModelTests.swift */,
+				50207D0F2C306E010027F2B6 /* ContactViewModelTests.swift */,
+				50207D192C308D410027F2B6 /* UserDefaultsManagerTests.swift */,
 			);
 			path = TripManagerTests;
 			sourceTree = "<group>";
@@ -219,6 +280,7 @@
 				505130DA2C2D8C7700741634 /* Double+Currency.swift */,
 				508DD9632C2DABB8005911CF /* Constants.swift */,
 				508DD96E2C2DF62B005911CF /* NotificationsCenter.swift */,
+				50207D132C30756B0027F2B6 /* UserDefaultsManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -247,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				509600662C288EB500AD9021 /* TripsDataManager.swift */,
+				50207D052C300BE40027F2B6 /* StopsDataManager.swift */,
 				509600702C29C78600AD9021 /* Api.swift */,
 			);
 			path = Services;
@@ -258,6 +321,7 @@
 				509600692C288F2E00AD9021 /* Trip.swift */,
 				508C7A912C2CAE9B00FFB8A7 /* Stop.swift */,
 				508DD96C2C2DF34D005911CF /* Contact.swift */,
+				50207D0D2C303D8B0027F2B6 /* Extensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,6 +453,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50207CF82C3009E30027F2B6 /* trips.json in Resources */,
+				50207D002C300A610027F2B6 /* stops.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +473,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				50207CE82C2EF1060027F2B6 /* MapListViewBuilder.swift in Sources */,
+				50207D0E2C303D8B0027F2B6 /* Extensions.swift in Sources */,
+				50207D062C300BE40027F2B6 /* StopsDataManager.swift in Sources */,
 				5096006A2C288F2E00AD9021 /* Trip.swift in Sources */,
 				509600612C284F1F00AD9021 /* Locations.swift in Sources */,
 				505130DB2C2D8C7700741634 /* Double+Currency.swift in Sources */,
@@ -414,6 +482,7 @@
 				509600532C28395500AD9021 /* MainView.swift in Sources */,
 				508DD9622C2DAAC2005911CF /* StopInfoView.swift in Sources */,
 				509600672C288EB500AD9021 /* TripsDataManager.swift in Sources */,
+				50207D142C30756B0027F2B6 /* UserDefaultsManager.swift in Sources */,
 				508DD9642C2DABB8005911CF /* Constants.swift in Sources */,
 				508DD96B2C2DE923005911CF /* ContactViewModel.swift in Sources */,
 				5096006F2C289D9A00AD9021 /* TripCell.swift in Sources */,
@@ -438,7 +507,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				509600392C2838FF00AD9021 /* TripManagerTests.swift in Sources */,
+				50207CFB2C3009E30027F2B6 /* URLProtocolMock.swift in Sources */,
+				50207D102C306E010027F2B6 /* ContactViewModelTests.swift in Sources */,
+				50207D162C307C7C0027F2B6 /* UserDefaultsManagerMock.swift in Sources */,
+				50207D082C300CC20027F2B6 /* TripsMock.swift in Sources */,
+				50207D022C300B720027F2B6 /* MapListViewModelTests.swift in Sources */,
+				50207D0A2C30100C0027F2B6 /* StopsDataManagerMock.swift in Sources */,
+				50207D1A2C308D410027F2B6 /* UserDefaultsManagerTests.swift in Sources */,
+				50207D0C2C30104C0027F2B6 /* StopsMock.swift in Sources */,
+				50207D042C300BCF0027F2B6 /* TripsDataManagerMock.swift in Sources */,
+				50207CFD2C3009E30027F2B6 /* URLSessionMock.swift in Sources */,
+				50207D122C306E4E0027F2B6 /* NotificationsCenterMock.swift in Sources */,
+				50207D182C307E9A0027F2B6 /* ContactMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

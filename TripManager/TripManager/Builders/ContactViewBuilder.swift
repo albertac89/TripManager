@@ -11,7 +11,8 @@ struct ContactViewBuilder {
     @MainActor 
     static func build() -> ContactView {
         let notificationCenter = NotificationsCenter(center: UNUserNotificationCenter.current())
-        let viewModel = ContactViewModel(notificationsCenter: notificationCenter)
+        let userDefaultsManager = UserDefaultsManager()
+        let viewModel = ContactViewModel(notificationsCenter: notificationCenter, userDefaultsManager: userDefaultsManager)
         return ContactView(viewModel: viewModel)
     }
 }

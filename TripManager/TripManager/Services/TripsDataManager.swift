@@ -9,7 +9,6 @@ import Foundation
 
 protocol TripsDataManagerProtocol {
     func getTrips() async throws -> [Trip]?
-    func getStops() async throws -> Stop?
 }
 
 final class TripsDataManager {
@@ -23,9 +22,5 @@ final class TripsDataManager {
 extension TripsDataManager: TripsDataManagerProtocol {
     func getTrips() async throws -> [Trip]? {
         try await api.getData(from: "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/trips.json")
-    }
-
-    func getStops() async throws -> Stop? {
-        try await api.getData(from: "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/stops.json")
     }
 }

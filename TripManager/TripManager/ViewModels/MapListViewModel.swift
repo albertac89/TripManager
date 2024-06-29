@@ -13,6 +13,7 @@ import MapKit
 @MainActor
 final class MapListViewModel: ObservableObject {
     private let tripsDataManager: TripsDataManagerProtocol
+    private let stopsDataManager: StopsDataManagerProtocol
     @Published var trips: [Trip] = []
     @Published var stop: Stop?
     @Published var errorDescription: String?
@@ -21,8 +22,9 @@ final class MapListViewModel: ObservableObject {
         static let pullToRefreshString = "Pull to refresh"
     }
 
-    init(tripsDataManager: TripsDataManagerProtocol) {
+    init(tripsDataManager: TripsDataManagerProtocol, stopsDataManager: StopsDataManagerProtocol) {
         self.tripsDataManager = tripsDataManager
+        self.stopsDataManager = stopsDataManager
     }
 }
 
@@ -42,10 +44,10 @@ extension MapListViewModel {
     func loadStops()  async {
         showError = false
         do {
-            stop = try await tripsDataManager.getStops()
+            stop = try await stopsDataManager.getStops()
         } catch {
             showError = true
-            errorDescription = error.localizedDescription + "\n\n" + Constants.pullToRefreshString
+            errorDescription = error.localizedDescription
         }
     }
 

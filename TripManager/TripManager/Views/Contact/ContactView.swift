@@ -46,7 +46,7 @@ struct ContactView: View {
                 .disabled(!viewModel.form.isValid)
             }
         }.alert("Form sent succesfully", isPresented: $viewModel.showFormSent) {
-            Button("Return to the map", role: .cancel) {
+            Button("Ok", role: .cancel) {
                 dismiss()
             }
         }
