@@ -14,9 +14,4 @@ struct Contact: Codable {
     var phone: String
     var date: Date
     var description: String
-
-    var isValid: Bool {
-        !name.isEmpty && !surname.isEmpty && !email.isEmpty && isValidDate && !description.isEmpty
-    }
-    var isValidDate = false
 }

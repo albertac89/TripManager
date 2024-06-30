@@ -13,6 +13,9 @@ protocol ApiProtocol {
 
 final class Api {
     let client: URLSession
+    struct Constants {
+        static let host = "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com"
+    }
 
     init(client: URLSession) {
         self.client = client

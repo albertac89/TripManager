@@ -14,6 +14,13 @@ final class ContactViewModel: ObservableObject {
             limitDescriptionCharacters()
         }
     }
+    @Published var isNameValid = true
+    @Published var isSurnameValid = true
+    @Published var isEmailValid = true
+    @Published var isDateValid = true
+    @Published var isDateCanged = false
+    @Published var isDescriptionValid = true
+    @Published var showRequiredFields = false
     @Published var showFormSent = false
 
     static let descriptionCharactersLimit = 200
@@ -34,7 +41,7 @@ extension ContactViewModel {
     }
 
     func submit() async {
-        if form.isValid {
+        if validateForm() {
             if var forms = userDefaultsManager.get([Contact].self, valueFor: UserDefaultsKeys.form) {
                 forms.append(form)
                 userDefaultsManager.set(value: forms, for: UserDefaultsKeys.form)
@@ -44,7 +51,19 @@ extension ContactViewModel {
                 await notificationsCenter.setBadgeCount(to: 1)
             }
             completed()
+        } else {
+            showRequiredFields = true
         }
+    }
+
+    private func validateForm() -> Bool {
+        showRequiredFields = false
+        isNameValid = !form.name.isEmpty
+        isSurnameValid = !form.surname.isEmpty
+        isEmailValid = !form.email.isEmpty
+        isDateValid = isDateCanged
+        isDescriptionValid = !form.description.isEmpty
+        return isNameValid && isSurnameValid && isEmailValid && isDateValid && isDescriptionValid
     }
 
     private func completed() {

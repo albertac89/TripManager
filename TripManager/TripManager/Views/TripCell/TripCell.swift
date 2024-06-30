@@ -9,25 +9,18 @@ import SwiftUI
 
 struct TripCell: View {
     let trip: Trip
-    struct Constants {
-        struct Strings {
-            static let date = "Date:"
-            static let origin = "Origin:"
-            static let destination = "Destination:"
-        }
-    }
 
     var body: some View {
         VStack(alignment: .leading) {
             Text(trip.driverName)
                 .font(.system(size: 20))
             if let date = trip.startTimeFormated {
-                Text("\(Constants.Strings.date) \(date)")
+                Text("\(Strings.Cell.dateField) \(date)")
                     .font(.system(size: 10))
             }
-            Text("\(Constants.Strings.origin) \(trip.origin.address)")
+            Text("\(Strings.Cell.originField) \(trip.origin.address)")
                 .font(.system(size: 15))
-            Text("\(Constants.Strings.destination) \(trip.destination.address)")
+            Text("\(Strings.Cell.destinationField) \(trip.destination.address)")
                 .font(.system(size: 15))
         }
         .padding(10)

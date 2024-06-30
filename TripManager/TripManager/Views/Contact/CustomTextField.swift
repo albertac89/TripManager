@@ -8,18 +8,22 @@
 import SwiftUI
 
 struct CustomTextField: View {
+
     var title: String
     var placeholder: String?
-    @Binding var text: String
     var type: UIKeyboardType?
+    @Binding var text: String
+    @Binding var isValid: Bool
+    var isMandatory: Bool = false
 
     var body: some View {
         Text(title)
             .listRowSeparator(.hidden)
         TextField(placeholder ?? "", text: $text)
             .background(.darkOnDark)
-            .border(.gray)
+            .border(isValid ? .gray : .red)
             .keyboardType(type ?? .default)
+            .submitLabel(.next)
             .onChange(of: text) { oldValue, newValue in
                 switch type {
                 case .numberPad:
@@ -36,5 +40,5 @@ struct CustomTextField: View {
 }
 
 #Preview {
-    CustomTextField(title: "Test", text: .constant(""))
+    CustomTextField(title: "Test", text: .constant(""), isValid: .constant(true))
 }

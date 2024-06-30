@@ -10,18 +10,22 @@ import SwiftUI
 struct CustomTextEditor: View {
     var title: String
     @Binding var text: String
+    @Binding var isValid: Bool
+    var isMandatory: Bool = false
     @State private var typedCharacters: Int = 0
+    @FocusState private var isFocused: Bool
 
     var body: some View {
         Text(title)
             .listRowSeparator(.hidden)
         VStack {
             TextEditor(text: $text)
+                .focused($isFocused)
                 .lineLimit(6)
                 .multilineTextAlignment(.leading)
                 .frame(height: 100)
                 .background(.darkOnDark)
-                .border(.gray)
+                .border(isValid ? .gray : .red)
                 .disableAutocorrection(true)
                 .onChange(of: text) {
                     typedCharacters = text.count
@@ -36,5 +40,5 @@ struct CustomTextEditor: View {
 }
 
 #Preview {
-    CustomTextEditor(title: "Description", text: .constant(""))
+    CustomTextEditor(title: "Description", text: .constant(""), isValid: .constant(true))
 }

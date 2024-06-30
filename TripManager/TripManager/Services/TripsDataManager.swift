@@ -13,6 +13,9 @@ protocol TripsDataManagerProtocol {
 
 final class TripsDataManager {
     var api: ApiProtocol
+    struct Constants {
+        static let trips = "/tech-test/trips.json"
+    }
 
     init(api: ApiProtocol) {
         self.api = api
@@ -21,6 +24,6 @@ final class TripsDataManager {
 
 extension TripsDataManager: TripsDataManagerProtocol {
     func getTrips() async throws -> [Trip]? {
-        try await api.getData(from: "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/trips.json")
+        try await api.getData(from: Api.Constants.host+Constants.trips)
     }
 }

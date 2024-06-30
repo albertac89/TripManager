@@ -28,19 +28,27 @@ struct MainView: View {
                     MapListVView()
                 }
             }
-            .navigationTitle("TripManager")
+            .navigationTitle(Strings.Navigation.appTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Contact") {
+                    Button {
                         path.append(.contactForm)
+                    } label: {
+                        Text(Strings.Navigation.contactButton)
+                        Spacer()
                     }
+                    .padding(1)
+                    .background(.whiteOnDark)
+                    .foregroundStyle(.darkOnDark)
+                    .clipShape(Capsule())
+                    .shadow(radius: 3)
                 }
             }.navigationDestination(for: Destination.self) { selection in
                 switch selection {
                 case .contactForm:
                     ContactViewBuilder.build()
-                        .navigationTitle("Contact form")
+                        .navigationTitle(Strings.Navigation.contactFormTitle)
                 }
             }
         }

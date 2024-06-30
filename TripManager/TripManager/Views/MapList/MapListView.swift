@@ -20,24 +20,14 @@ struct MapListView: View {
     )
     @State private var selectedAnnotation: Trip.Stop?
 
-    struct Constants {
-        struct Strings {
-            static let origin = "Origin"
-            static let destination = "Destination"
-            static let stop = "Stop"
-            static let address = "Address"
-            static let okError = "Ok"
-        }
-    }
-
     var body: some View {
         Map(position: $position, interactionModes: .all) {
             if let selectedTrip {
-                Marker(Constants.Strings.origin, 
+                Marker(Strings.Map.origin,
                        systemImage: Icons.origin,
                        coordinate: selectedTrip.origin.point.coordinate)
                 .tint(.whiteOnDark)
-                Marker(Constants.Strings.destination,
+                Marker(Strings.Map.destination,
                        systemImage: Icons.destination,
                        coordinate: selectedTrip.destination.point.coordinate)
                 .tint(.whiteOnDark)
@@ -49,7 +39,7 @@ struct MapListView: View {
 
                 ForEach(selectedTrip.stops) { stop in
                     if let point = stop.point {
-                        Annotation(Constants.Strings.stop, coordinate: point.coordinate) {
+                        Annotation(Strings.Map.stop, coordinate: point.coordinate) {
                             ZStack {
                                 Image(systemName: Icons.stop)
                                     .resizable()
@@ -109,7 +99,7 @@ struct MapListView: View {
         .task(viewModel.loadTrips)
         .refreshable(action: viewModel.loadTrips)
         .alert(viewModel.errorDescription ?? "", isPresented: $viewModel.showError) {
-            Button(Constants.Strings.okError, role: .cancel) { }
+            Button(Strings.Alert.ok, role: .cancel) { }
         }
     }
 }

@@ -25,8 +25,14 @@ final class ContactViewModelTests: XCTestCase {
         }
 
         // Initial values
+        XCTAssertTrue(sut.isNameValid)
+        XCTAssertTrue(sut.isSurnameValid)
+        XCTAssertTrue(sut.isEmailValid)
+        XCTAssertTrue(sut.isDateValid)
+        XCTAssertFalse(sut.isDateCanged)
+        XCTAssertTrue(sut.isDescriptionValid)
+        XCTAssertFalse(sut.showRequiredFields)
         XCTAssertFalse(sut.showFormSent)
-        XCTAssertFalse(sut.form.isValid)
         XCTAssertEqual(notificationsCenter.notificationPermisionsSpy, 0)
         XCTAssertEqual(notificationsCenter.setBadgeCountSpy, 0)
         XCTAssertEqual(userDefaultsManager.setSpy, 0)
@@ -37,8 +43,14 @@ final class ContactViewModelTests: XCTestCase {
         await sut.submit()
 
         // Check
+        XCTAssertFalse(sut.isNameValid)
+        XCTAssertFalse(sut.isSurnameValid)
+        XCTAssertFalse(sut.isEmailValid)
+        XCTAssertFalse(sut.isDateValid)
+        XCTAssertFalse(sut.isDateCanged)
+        XCTAssertFalse(sut.isDescriptionValid)
+        XCTAssertTrue(sut.showRequiredFields)
         XCTAssertFalse(sut.showFormSent)
-        XCTAssertFalse(sut.form.isValid)
         XCTAssertEqual(notificationsCenter.notificationPermisionsSpy, 0)
         XCTAssertEqual(notificationsCenter.setBadgeCountSpy, 0)
         XCTAssertEqual(userDefaultsManager.setSpy, 0)
@@ -53,8 +65,14 @@ final class ContactViewModelTests: XCTestCase {
         }
 
         // Initial values
+        XCTAssertTrue(sut.isNameValid)
+        XCTAssertTrue(sut.isSurnameValid)
+        XCTAssertTrue(sut.isEmailValid)
+        XCTAssertTrue(sut.isDateValid)
+        XCTAssertFalse(sut.isDateCanged)
+        XCTAssertTrue(sut.isDescriptionValid)
+        XCTAssertFalse(sut.showRequiredFields)
         XCTAssertFalse(sut.showFormSent)
-        XCTAssertFalse(sut.form.isValid)
         XCTAssertEqual(notificationsCenter.notificationPermisionsSpy, 0)
         XCTAssertEqual(notificationsCenter.setBadgeCountSpy, 0)
         XCTAssertEqual(userDefaultsManager.setSpy, 0)
@@ -67,15 +85,21 @@ final class ContactViewModelTests: XCTestCase {
         sut.form.email = "test"
         sut.form.phone = "465465"
         sut.form.date = Date.now
-        sut.form.isValidDate = true
+        sut.isDateCanged = true
         sut.form.description = "test"
 
         // Submit form
         await sut.submit()
 
         // Check
+        XCTAssertTrue(sut.isNameValid)
+        XCTAssertTrue(sut.isSurnameValid)
+        XCTAssertTrue(sut.isEmailValid)
+        XCTAssertTrue(sut.isDateValid)
+        XCTAssertTrue(sut.isDateCanged)
+        XCTAssertTrue(sut.isDescriptionValid)
+        XCTAssertFalse(sut.showRequiredFields)
         XCTAssertTrue(sut.showFormSent)
-        XCTAssertTrue(sut.form.isValid)
         XCTAssertEqual(notificationsCenter.notificationPermisionsSpy, 0)
         XCTAssertEqual(notificationsCenter.setBadgeCountSpy, 1)
         XCTAssertEqual(userDefaultsManager.setSpy, 1)
@@ -125,7 +149,7 @@ final class ContactViewModelTests: XCTestCase {
         sut.form.email = "test"
         sut.form.phone = "465465"
         sut.form.date = Date.now
-        sut.form.isValidDate = true
+        sut.isDateCanged = true
         sut.form.description = "test"
 
         // Submit form

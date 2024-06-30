@@ -13,6 +13,9 @@ protocol StopsDataManagerProtocol {
 
 final class StopsDataManager {
     var api: ApiProtocol
+    struct Constants {
+        static let stops = "/tech-test/stops.json"
+    }
 
     init(api: ApiProtocol) {
         self.api = api
@@ -21,6 +24,6 @@ final class StopsDataManager {
 
 extension StopsDataManager: StopsDataManagerProtocol {
     func getStops() async throws -> Stop? {
-        try await api.getData(from: "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/stops.json")
+        try await api.getData(from: Api.Constants.host+Constants.stops)
     }
 }
