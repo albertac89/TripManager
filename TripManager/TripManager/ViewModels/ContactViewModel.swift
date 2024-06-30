@@ -34,12 +34,20 @@ final class ContactViewModel: ObservableObject {
 }
 
 extension ContactViewModel {
+    /**
+     func limitDescriptionCharacters()
+     Limits the characters of the description field
+     */
     private func limitDescriptionCharacters() {
         if form.description.count > ContactViewModel.descriptionCharactersLimit {
             form.description = String(form.description.prefix(ContactViewModel.descriptionCharactersLimit))
         }
     }
 
+    /**
+     func submit() async
+     Simulates sending a form, stores the forms in UserDefaults, and sets a badge to show in the app icon how mani contact forms you submited
+     */
     func submit() async {
         if validateForm() {
             if var forms = userDefaultsManager.get([Contact].self, valueFor: UserDefaultsKeys.form) {
@@ -56,6 +64,11 @@ extension ContactViewModel {
         }
     }
 
+    /**
+     func validateForm() -> Bool
+     Validates the form and updates the @Published values to alert of missing required fields
+     - Returns: A Bool whether the form is valid or not
+     */
     private func validateForm() -> Bool {
         showRequiredFields = false
         isNameValid = !form.name.isEmpty
@@ -66,6 +79,10 @@ extension ContactViewModel {
         return isNameValid && isSurnameValid && isEmailValid && isDateValid && isDescriptionValid
     }
 
+    /**
+     func completed()
+     Sets the @Published var showFormSent to true, to show an alert of form sent
+     */
     private func completed() {
         showFormSent = true
     }

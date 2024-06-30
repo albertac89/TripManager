@@ -8,6 +8,10 @@
 import Foundation
 
 protocol TripsDataManagerProtocol {
+    /**
+     func getTrips() async throws -> [Trip]?
+     - returns: An array of Trips of type [Trip]?
+     */
     func getTrips() async throws -> [Trip]?
 }
 

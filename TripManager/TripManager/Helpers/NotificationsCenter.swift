@@ -8,7 +8,16 @@
 import NotificationCenter
 
 protocol NotificationsCenterProtocol {
+    /**
+     func notificationPermisions() async
+     Asks permisions to the user to show badge notifications to the app icon
+     */
     @Sendable func notificationPermisions() async
+    /**
+     func setBadgeCount(to value: Int) async
+     Sets an integer value to the badge
+     - parameter value: The integer value to show in the badge
+     */
     @Sendable func setBadgeCount(to value: Int) async
 }
 

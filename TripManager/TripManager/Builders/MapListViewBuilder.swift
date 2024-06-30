@@ -8,7 +8,12 @@
 import Foundation
 
 struct MapListViewBuilder {
-    @MainActor 
+    /**
+     static func build() -> MapListView
+     Build the MapListView with all the dependencies
+     - returns: A MapListView with all the dependencies injected
+     */
+    @MainActor
     static func build() -> MapListView {
         let api = Api(client: URLSession.shared)
         let tripsDataManager = TripsDataManager(api: api)

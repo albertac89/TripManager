@@ -8,6 +8,10 @@
 import Foundation
 
 extension Double {
+    /**
+     var currencyFormat: String?
+     Formats a Double into a € currency with two decimals
+     */
     var currencyFormat: String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency

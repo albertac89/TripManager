@@ -8,6 +8,10 @@
 import Foundation
 
 protocol StopsDataManagerProtocol {
+    /**
+     func getStops() async throws -> Stop?
+     - returns: A stop of type Stop?
+     */
     func getStops() async throws -> Stop?
 }
 

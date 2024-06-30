@@ -9,7 +9,6 @@ import SwiftUI
 import Foundation
 import MapKit
 
-// TODO add function comments
 @MainActor
 final class MapListViewModel: ObservableObject {
     private let tripsDataManager: TripsDataManagerProtocol
@@ -29,6 +28,10 @@ final class MapListViewModel: ObservableObject {
 }
 
 extension MapListViewModel {
+    /**
+     func loadTrips()
+     Loads the trips to a @Published var trips of type [Trip]
+     */
     @Sendable
     func loadTrips() async {
         showError = false
@@ -40,6 +43,10 @@ extension MapListViewModel {
         }
     }
 
+    /**
+     func loadStops()
+     Loads the stop to a @Published var stop of type Stop?
+     */
     @Sendable
     func loadStops()  async {
         showError = false
@@ -51,6 +58,12 @@ extension MapListViewModel {
         }
     }
 
+    /**
+     func cameraPosition(for polyline: MKPolyline) -> MKMapRect
+     Retruns a MKMapRect to position the camera on the map
+     - parameter polyline: The polyline to focus the camera
+     - Returns: A MKMapRect to position the camera on the map
+     */
     func cameraPosition(for polyline: MKPolyline) -> MKMapRect {
         var rect = polyline.boundingMapRect
         let wPadding = rect.size.width * 0.25

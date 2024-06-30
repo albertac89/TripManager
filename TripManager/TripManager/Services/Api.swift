@@ -8,6 +8,11 @@
 import Foundation
 
 protocol ApiProtocol {
+    /**
+     func getData<T: Decodable>(from url: String) async throws -> T?
+     - parameter url: The complete url wiht the host and path
+     - returns: A generic type T?
+     */
     func getData<T: Decodable>(from url: String) async throws -> T?
 }
 
