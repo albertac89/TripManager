@@ -28,6 +28,6 @@ final class TripsDataManager {
 
 extension TripsDataManager: TripsDataManagerProtocol {
     func getTrips() async throws -> [Trip]? {
-        try await api.getData(from: Api.Constants.host+Constants.tripsPath)
+        try await api.getData(from: Api.Constants.host + Constants.tripsPath)
     }
 }

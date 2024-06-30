@@ -28,6 +28,6 @@ final class StopsDataManager {
 
 extension StopsDataManager: StopsDataManagerProtocol {
     func getStops() async throws -> Stop? {
-        try await api.getData(from: Api.Constants.host+Constants.stopsPath)
+        try await api.getData(from: Api.Constants.host + Constants.stopsPath)
     }
 }

@@ -29,15 +29,25 @@ protocol UserDefaultsManagerProtocol {
 
 final class UserDefaultsManager: UserDefaultsManagerProtocol {
     func set<T: Encodable>(value: T, for key: String) {
-        if let encoded = try? JSONEncoder().encode(value) {
+        do {
+            let encoded = try JSONEncoder().encode(value)
             UserDefaults.standard.set(encoded, forKey: key)
+        } catch {
+            print("Error to encode the value for the key \(key): \(error.localizedDescription)")
         }
     }
 
     func get<T: Decodable>(_ type: T.Type, valueFor key: String) -> T? {
-        if let data = UserDefaults.standard.object(forKey: key) as? Data {
-            return try? JSONDecoder().decode(type.self, from: data)
+        guard let data = UserDefaults.standard.object(forKey: key) as? Data else {
+            print("No data found for the key \(key)")
+            return nil
         }
-        return nil
+
+        do {
+            return try JSONDecoder().decode(type.self, from: data)
+        } catch {
+            print("Error to encode the value for the key \(key): \(error.localizedDescription)")
+            return nil
+        }
     }
 }

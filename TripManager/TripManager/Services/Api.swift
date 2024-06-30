@@ -29,11 +29,23 @@ final class Api {
 
 extension Api: ApiProtocol {
     func getData<T: Decodable>(from url: String) async throws -> T? {
-        guard let url = URL(string: url) else { return nil }
+        guard let url = URL(string: url) else {
+            throw URLError(.badURL)
+        }
 
-        let (data, _) = try await client.data(from: url)
+        let (data, response) = try await client.data(from: url)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+              (200...299).contains(httpResponse.statusCode) else {
+            throw URLError(.badServerResponse)
+        }
 
         let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: data)
+
+        do {
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Failed to decode data"))
+        }
     }
 }

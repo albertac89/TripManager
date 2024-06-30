@@ -55,7 +55,8 @@ struct ContactView: View {
                 .buttonStyle(.bordered)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
             }
-        }.alert(Strings.Alert.formSentAlert, isPresented: $viewModel.showFormSent) {
+        }
+        .alert(Strings.Alert.formSentAlert, isPresented: $viewModel.showFormSent) {
             Button(Strings.Alert.ok, role: .cancel) {
                 dismiss()
             }
