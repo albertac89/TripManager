@@ -15,11 +15,14 @@ struct CustomDatePicker: View {
     var isMandatory: Bool = false
 
     var body: some View {
-        DatePicker(title, selection: $date)
-            .foregroundStyle(isValid ? .whiteOnDark : .red)
-            .onChange(of: date) {
-                changedDate = true
-            }.listRowSeparator(.hidden)
+        HStack {
+            Text(title)
+            DatePicker("", selection: $date)
+                .colorMultiply(isValid ? .whiteOnDark : .red)
+                .onChange(of: date) {
+                    changedDate = true
+                }.listRowSeparator(.hidden)
+        }
     }
 }
 

@@ -26,7 +26,7 @@ struct Strings {
     }
     struct Alert {
         static let formSentAlert = "Form sent succesfully"
-        static let requiredFieldsAlert = "Required fields in red"
+        static let requiredFieldsAlert = "Missing required fields"
         static let ok = "Ok"
     }
     struct Navigation {

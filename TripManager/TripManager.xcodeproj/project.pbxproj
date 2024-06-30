@@ -29,6 +29,8 @@
 		50207D1A2C308D410027F2B6 /* UserDefaultsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D192C308D410027F2B6 /* UserDefaultsManagerTests.swift */; };
 		50207D1E2C316BA90027F2B6 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D1D2C316BA90027F2B6 /* CustomDatePicker.swift */; };
 		50207D212C317A640027F2B6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D202C317A640027F2B6 /* Strings.swift */; };
+		50207D232C31830F0027F2B6 /* TripsDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D222C31830F0027F2B6 /* TripsDataManagerTests.swift */; };
+		50207D252C3185810027F2B6 /* StopsDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50207D242C3185810027F2B6 /* StopsDataManagerTests.swift */; };
 		505130D92C2D825F00741634 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505130D82C2D825F00741634 /* String.swift */; };
 		505130DB2C2D8C7700741634 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505130DA2C2D8C7700741634 /* Double+Currency.swift */; };
 		508C7A8B2C2C268F00FFB8A7 /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 508C7A8A2C2C268F00FFB8A7 /* Polyline */; };
@@ -98,6 +100,8 @@
 		50207D192C308D410027F2B6 /* UserDefaultsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagerTests.swift; sourceTree = "<group>"; };
 		50207D1D2C316BA90027F2B6 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		50207D202C317A640027F2B6 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		50207D222C31830F0027F2B6 /* TripsDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDataManagerTests.swift; sourceTree = "<group>"; };
+		50207D242C3185810027F2B6 /* StopsDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsDataManagerTests.swift; sourceTree = "<group>"; };
 		505130D82C2D825F00741634 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		505130DA2C2D8C7700741634 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		508C7A912C2CAE9B00FFB8A7 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 				50207D012C300B720027F2B6 /* MapListViewModelTests.swift */,
 				50207D0F2C306E010027F2B6 /* ContactViewModelTests.swift */,
 				50207D192C308D410027F2B6 /* UserDefaultsManagerTests.swift */,
+				50207D222C31830F0027F2B6 /* TripsDataManagerTests.swift */,
+				50207D242C3185810027F2B6 /* StopsDataManagerTests.swift */,
 			);
 			path = TripManagerTests;
 			sourceTree = "<group>";
@@ -522,8 +528,10 @@
 				50207D022C300B720027F2B6 /* MapListViewModelTests.swift in Sources */,
 				50207D0A2C30100C0027F2B6 /* StopsDataManagerMock.swift in Sources */,
 				50207D1A2C308D410027F2B6 /* UserDefaultsManagerTests.swift in Sources */,
+				50207D252C3185810027F2B6 /* StopsDataManagerTests.swift in Sources */,
 				50207D0C2C30104C0027F2B6 /* StopsMock.swift in Sources */,
 				50207D042C300BCF0027F2B6 /* TripsDataManagerMock.swift in Sources */,
+				50207D232C31830F0027F2B6 /* TripsDataManagerTests.swift in Sources */,
 				50207CFD2C3009E30027F2B6 /* URLSessionMock.swift in Sources */,
 				50207D122C306E4E0027F2B6 /* NotificationsCenterMock.swift in Sources */,
 				50207D182C307E9A0027F2B6 /* ContactMock.swift in Sources */,

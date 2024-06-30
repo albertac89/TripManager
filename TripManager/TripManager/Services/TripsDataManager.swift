@@ -14,7 +14,7 @@ protocol TripsDataManagerProtocol {
 final class TripsDataManager {
     var api: ApiProtocol
     struct Constants {
-        static let trips = "/tech-test/trips.json"
+        static let tripsPath = "/tech-test/trips.json"
     }
 
     init(api: ApiProtocol) {
@@ -24,6 +24,6 @@ final class TripsDataManager {
 
 extension TripsDataManager: TripsDataManagerProtocol {
     func getTrips() async throws -> [Trip]? {
-        try await api.getData(from: Api.Constants.host+Constants.trips)
+        try await api.getData(from: Api.Constants.host+Constants.tripsPath)
     }
 }
