@@ -17,9 +17,8 @@ struct CustomTextField: View {
     var isMandatory: Bool = false
 
     var body: some View {
-        Text(title)
+        TextField(title, text: $text)
             .listRowSeparator(.hidden)
-        TextField(placeholder ?? "", text: $text)
             .background(.darkOnDark)
             .border(isValid ? .gray : .red)
             .keyboardType(type ?? .default)

@@ -18,19 +18,17 @@ struct CustomTextEditor: View {
     var body: some View {
         Text(title)
             .listRowSeparator(.hidden)
-        VStack {
-            TextEditor(text: $text)
-                .focused($isFocused)
-                .lineLimit(6)
-                .multilineTextAlignment(.leading)
-                .frame(height: 100)
-                .background(.darkOnDark)
-                .border(isValid ? .gray : .red)
-                .disableAutocorrection(true)
-                .onChange(of: text) {
-                    typedCharacters = text.count
-                }
-        }
+        TextEditor(text: $text)
+            .focused($isFocused)
+            .lineLimit(6)
+            .multilineTextAlignment(.leading)
+            .frame(height: 100)
+            .background(.darkOnDark)
+            .border(isValid ? .gray : .red)
+            .disableAutocorrection(true)
+            .onChange(of: text) {
+                typedCharacters = text.count
+            }
         HStack {
             Spacer()
             Text("\(typedCharacters) / \(ContactViewModel.descriptionCharactersLimit)")

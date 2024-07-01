@@ -46,8 +46,6 @@
 		509600282C2838FD00AD9021 /* TripManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600272C2838FD00AD9021 /* TripManagerApp.swift */; };
 		5096002C2C2838FF00AD9021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5096002B2C2838FF00AD9021 /* Assets.xcassets */; };
 		5096002F2C2838FF00AD9021 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5096002E2C2838FF00AD9021 /* Preview Assets.xcassets */; };
-		509600432C2838FF00AD9021 /* TripManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600422C2838FF00AD9021 /* TripManagerUITests.swift */; };
-		509600452C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600442C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift */; };
 		509600532C28395500AD9021 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600522C28395500AD9021 /* MainView.swift */; };
 		509600592C28485300AD9021 /* MapListHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600582C28485300AD9021 /* MapListHView.swift */; };
 		5096005B2C28485C00AD9021 /* MapListVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096005A2C28485C00AD9021 /* MapListVView.swift */; };
@@ -58,6 +56,8 @@
 		5096006C2C2897F100AD9021 /* MapListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096006B2C2897F100AD9021 /* MapListView.swift */; };
 		5096006F2C289D9A00AD9021 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096006E2C289D9A00AD9021 /* TripCell.swift */; };
 		509600712C29C78600AD9021 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509600702C29C78600AD9021 /* Api.swift */; };
+		50A4A1962C32C1FC00938427 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4A1952C32C1FC00938427 /* MainViewUITests.swift */; };
+		50A4A1982C32C40600938427 /* ContactViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4A1972C32C40600938427 /* ContactViewUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,8 +119,6 @@
 		5096002E2C2838FF00AD9021 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		509600342C2838FF00AD9021 /* TripManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5096003E2C2838FF00AD9021 /* TripManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		509600422C2838FF00AD9021 /* TripManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITests.swift; sourceTree = "<group>"; };
-		509600442C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		509600522C28395500AD9021 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		509600582C28485300AD9021 /* MapListHView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListHView.swift; sourceTree = "<group>"; };
 		5096005A2C28485C00AD9021 /* MapListVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListVView.swift; sourceTree = "<group>"; };
@@ -131,6 +129,8 @@
 		5096006B2C2897F100AD9021 /* MapListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListView.swift; sourceTree = "<group>"; };
 		5096006E2C289D9A00AD9021 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
 		509600702C29C78600AD9021 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		50A4A1952C32C1FC00938427 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewUITests.swift; sourceTree = "<group>"; };
+		50A4A1972C32C40600938427 /* ContactViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,8 +266,8 @@
 		509600412C2838FF00AD9021 /* TripManagerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				509600422C2838FF00AD9021 /* TripManagerUITests.swift */,
-				509600442C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift */,
+				50A4A1952C32C1FC00938427 /* MainViewUITests.swift */,
+				50A4A1972C32C40600938427 /* ContactViewUITests.swift */,
 			);
 			path = TripManagerUITests;
 			sourceTree = "<group>";
@@ -542,8 +542,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				509600432C2838FF00AD9021 /* TripManagerUITests.swift in Sources */,
-				509600452C2838FF00AD9021 /* TripManagerUITestsLaunchTests.swift in Sources */,
+				50A4A1982C32C40600938427 /* ContactViewUITests.swift in Sources */,
+				50A4A1962C32C1FC00938427 /* MainViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

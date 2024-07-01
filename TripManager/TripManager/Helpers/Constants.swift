@@ -6,7 +6,7 @@
 //
 
 struct Icons {
-    static let origin = "car.side.fill"
+    static let origin = "bus"
     static let destination = "flag.checkered"
     static let stop = "mappin.circle.fill"
     static let closeIcon = "xmark.circle"

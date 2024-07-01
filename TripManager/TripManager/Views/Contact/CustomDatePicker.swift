@@ -16,8 +16,7 @@ struct CustomDatePicker: View {
 
     var body: some View {
         HStack {
-            Text(title)
-            DatePicker("", selection: $date)
+            DatePicker(title, selection: $date)
                 .colorMultiply(isValid ? .whiteOnDark : .red)
                 .onChange(of: date) {
                     changedDate = true
